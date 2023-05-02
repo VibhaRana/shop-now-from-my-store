@@ -6,6 +6,7 @@ import './authentication.scss'
 import Button from '../../components/button/Button'
 import SignInForm from '../../components/sign-in-form/SignInForm'
 
+
 const Authentication = () => {
     //you can  retrieve the Google provider's OAuth token by calling getRedirectResult when your page loads: Its inbuilt method
     //Use it in a useEffect hook as redirecting to another page unmount the whole application, and no changes will appear on web
@@ -18,8 +19,8 @@ const Authentication = () => {
   
 
     return(
-        <div>
-            <h1>Sign In Page</h1>
+        <div className='authentication-container'>
+           
             {/* <Button onClick={logGoogleUser}>Sign In With Google</Button>
             <Button onClick={signInWithGoogleRedirect}>Sign In With Google Redirect</Button> */}
             <SignUpForm />
