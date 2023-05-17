@@ -1,39 +1,24 @@
-import React, {useState, useEffect} from 'react'
-import "./App.css";
- import { BrowserRouter as Router, Switch, Route, Routes, Link } from "react-router-dom";
-import Home from "../src/routes/home/Home";
-import Navigation from '../src/routes/navigation/Navigation'
-import Authentication from './routes/authentication/Authentication';
+import { Routes, Route } from "react-router-dom";
 
-function App() {
-  const[backendData, setBackendData] = useState([{}])
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+import Authentication from "./routes/authentication/authentication.component";
 
-  // useEffect(() => {
-  //   fetch('/').then(
-  //     res => res.json()
-  //   ).then(
-  //     data => {
-  //       setBackendData(data)
-  //     }
-    
-  //   )
+const Shop = () => {
+  return <h1>I am the shop page</h1>;
+};
 
-  // }, [])
-  return (
+const App = () => {
   
-    <div>
-      
-     <Routes> 
-    
-    <Route path = '/' element={<Navigation />}>
-     <Route index element={<Home />}/>
-     <Route path='/auth' element={<Authentication />}/>
-     </Route>
-   </Routes>  
-   </div>
-   
+  return (
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path='shop' element={<Shop />} />
+        <Route path='auth' element={<Authentication />} />
+      </Route>
+    </Routes>
   );
-  }
-
+};
 
 export default App;
