@@ -1,0 +1,13 @@
+//Style .products-container and make it responsive
+
+// Path: src/routes/shop/shop.styles.scss
+// Compare this snippet from src/components/product-card/product-card.styles.scss:
+ .products-container {
+     width: 100%;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     column-gap: 10px;
+     row-gap: 50px;
+     margin-bottom: 40px;
+   }
+   
