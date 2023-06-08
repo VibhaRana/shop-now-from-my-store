@@ -31,7 +31,7 @@ const categories = [
   ]
 function Home() {
   return (
-       <div style={{backgroundColor: 'black'}}>
+       <div>
         <Directory 
          categories = {categories}/>
          </div>
