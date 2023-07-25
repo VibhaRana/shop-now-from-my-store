@@ -45,7 +45,8 @@ const addCartItem = (cartItems, productToAdd) => {
 
 }
 
-// A context object called CartContext is created using the createContext function. It provides default values for the cart context, including isCartOpen (a boolean representing whether the cart is open or not), setIsCartOpen (a function to update the cart's open/close state), cartItems (an array representing the items in the cart), and addItemToCart (a function to add items to the cart).
+// A context object called CartContext is created using the createContext function. 
+// It provides default values for the cart context, including isCartOpen (a boolean representing whether the cart is open or not), setIsCartOpen (a function to update the cart's open/close state), cartItems (an array representing the items in the cart), and addItemToCart (a function to add items to the cart).
 //Create Context for Cart
 export const CartContext = createContext({
     isCartOpen: false,
@@ -80,3 +81,33 @@ return (
     </CartContext.Provider>
 )
 }
+
+// Detailed Explanatio REMOVETOCART FUNCTIONn:
+
+// The code defines a function called removeCartItem that takes two parameters: cartItems and cartItemToRemove.
+
+// cartItems: This is an array that represents all the items currently in the shopping cart. Each item is an object with different properties like id (a unique identifier for each toy) and quantity (how many of that toy are in the cart).
+
+// cartItemToRemove: This is an object that represents the specific toy you want to remove from the cart. It also has an id property to identify which toy it is.
+
+// Now, let's see how the code works:
+
+// The function starts by searching for the toy to be removed in the cartItems array. It uses the find method, which looks at each item in the array and checks if its id matches the id of the cartItemToRemove. When it finds a match, it saves that item in a variable called existingCartItem.
+
+// Next, the code checks if the quantity of the existingCartItem is equal to 1. If there's only one of that toy in the cart, it means we want to remove it completely.
+
+// If the quantity is indeed equal to 1, the code uses the filter method on the cartItems array. The filter method creates a new array that includes all items from the original array except the one that matches the cartItemToRemove. This way, the specific toy is completely removed from the cart.
+
+// On the other hand, if the quantity of the existingCartItem is more than 1, it means we just want to take away one of that toy from the cart, not all of them.
+
+// In this case, the code uses the map method on the cartItems array. The map method creates a new array by going through each item in the original array.
+
+// If the id of an item in the cartItems array matches the id of the cartItemToRemove, it means this is the toy we want to decrease the quantity of.
+
+// The code creates a new object with the same properties as the original item, but it decreases the quantity property by 1, as we want one less of that toy in the cart.
+
+// If the id of an item doesn't match the id of the cartItemToRemove, it means it's not the toy we want to remove, so the code keeps the item as it is in the new array.
+
+// The function then returns the new array, which either has the specific toy completely removed or one less of that toy, based on the quantity.
+
+// That's it! The removeCartItem function helps manage the shopping cart by letting us take toys out of it, either completely or just a few, depending on what we want.

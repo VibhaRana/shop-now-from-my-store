@@ -11,13 +11,21 @@ import {
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk",
+//   authDomain: "crwn-clothing-db-98d4d.firebaseapp.com",
+//   projectId: "crwn-clothing-db-98d4d",
+//   storageBucket: "crwn-clothing-db-98d4d.appspot.com",
+//   messagingSenderId: "626766232035",
+//   appId: "1:626766232035:web:506621582dab103a4d08d6",
+// };
 const firebaseConfig = {
-  apiKey: "AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk",
-  authDomain: "crwn-clothing-db-98d4d.firebaseapp.com",
-  projectId: "crwn-clothing-db-98d4d",
-  storageBucket: "crwn-clothing-db-98d4d.appspot.com",
-  messagingSenderId: "626766232035",
-  appId: "1:626766232035:web:506621582dab103a4d08d6",
+  apiKey: "AIzaSyA8Fw108_1jEQZmTkRLRFfEH48p2wrOa94",
+  authDomain: "shop-now-from-my-store.firebaseapp.com",
+  projectId: "shop-now-from-my-store",
+  storageBucket: "shop-now-from-my-store.appspot.com",
+  messagingSenderId: "363491110444",
+  appId: "1:363491110444:web:a09f85ae8b53f0b78ceb89"
 };
 
 // Initialize Firebase
