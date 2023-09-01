@@ -111,3 +111,17 @@ return (
 // The function then returns the new array, which either has the specific toy completely removed or one less of that toy, based on the quantity.
 
 // That's it! The removeCartItem function helps manage the shopping cart by letting us take toys out of it, either completely or just a few, depending on what we want.
+//  // find the cart item to remove
+//  const existingCartItem = cartItems.find(
+//     (cartItem) => cartItem.id === cartItemToRemove.id
+//   );
+//  // check if quantity is equal to 1, if it is remove that item from the cart
+//   if (existingCartItem.quantity === 1) {
+//     return cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
+//   }
+//   // if quantity is not equal to 1, decrease the quantity by 1
+//   return cartItems.map((cartItem) =>
+//     cartItem.id === cartItemToRemove.id
+//       ? { ...cartItem, quantity: cartItem.quantity - 1 }
+//       : cartItem
+//   );
