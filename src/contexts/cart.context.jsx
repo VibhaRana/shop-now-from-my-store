@@ -20,19 +20,22 @@ export const addCartItem = (cartItems, productToAdd) => {
 //remove item from cart
 export const removeCartItem = (cartItems, cartItemToRemove) => {
     // find the cart item to remove
-  const existingCartItem = cartItems.find(
+   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === cartItemToRemove.id
-  );
+   )
  // check if quantity is equal to 1, if it is remove that item from the cart
-  if (existingCartItem.quantity === 1) {
-    return cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
+  if(existingCartItem.quantity === 1){
+    return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
   }
+
+  
   // if quantity is not equal to 1, decrease the quantity by 1
-  return cartItems.map((cartItem) =>
+  return cartItems.map(cartItem =>
     cartItem.id === cartItemToRemove.id
-      ? { ...cartItem, quantity: cartItem.quantity - 1 }
-      : cartItem
-  );
+    ? {...cartItem, quantity: cartItem.quantity - 1}
+    : cartItem
+    )
+
 
 };
 
@@ -50,8 +53,8 @@ export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
-  const addItemToCart = (product) =>
-    setCartItems(addCartItem(cartItems, product));
+  const addItemToCart = (productToAdd) =>
+    setCartItems(addCartItem(cartItems, productToAdd));
 
     const  removeItemFromCart = (cartItemToRemove) =>
       setCartItems(removeCartItem(cartItems, cartItemToRemove));
