@@ -6,7 +6,7 @@ import CheckoutItem from '../../components/checkout-item/checkout-item.component
 
 const Checkout = () => {
   // The Checkout component imports the CartContext and useContext to access the cart items and the addItemToCart function.
-  const { cartItems, addItemToCart, removeItemFromCart } = useContext(CartContext)
+  const { cartItems,  cartTotal } = useContext(CartContext)
 
 
 
@@ -34,9 +34,10 @@ const Checkout = () => {
         {cartItems.map((cartItem) => (
           <CheckoutItem key={cartItem.id} cartItem={cartItem} />
         ))}
-        <div className='total'>TOTAL: 0</div>
+      <div className='total'>TOTAL: { cartTotal} </div>
       </div>
     );
   };
 
 export default Checkout
+

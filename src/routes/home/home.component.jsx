@@ -31,7 +31,8 @@ const categories = [
   ]
 function Home() {
   return (
-       <div>
+    <div>
+     
         <Directory 
          categories = {categories}/>
          </div>
